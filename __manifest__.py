@@ -1,6 +1,6 @@
 {
     'name': 'Live EGP Currency Rates Sync',
-    'version': '1.0',
+    'version': '17.0.1.0.0',
     'category': 'Accounting',
     'summary': 'Sync daily EGP exchange rates via ExchangeRate-API',
     'author': 'Abdelrahman Abdelhameed',
