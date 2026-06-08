@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_currency_api_config_form" model="ir.ui.view">
+        <field name="name">currency.api.config.form</field>
+        <field name="model">currency.api.config</field>
+        <field name="arch" type="xml">
+            <form string="API Configuration">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="api_key" password="True" placeholder="Paste your v6.exchangerate-api.com token here..."/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_currency_api_config_tree" model="ir.ui.view">
+        <field name="name">currency.api.config.tree</field>
+        <field name="model">currency.api.config</field>
+        <field name="arch" type="xml">
+            <tree string="API Configurations">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_currency_api_config" model="ir.actions.act_window">
+        <field name="name">Currency API Config</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">currency.api.config</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_currency_sync_root"
+              name="Currency Sync"
+              sequence="60"
+              web_icon="test_currency_sync,static/description/icon.png"/>
+
+    <menuitem id="menu_currency_api_config"
+              name="API Configuration"
+              parent="menu_currency_sync_root"
+              action="action_currency_api_config"
+              sequence="10"/>
+</odoo>
