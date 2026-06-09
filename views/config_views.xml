@@ -7,8 +7,14 @@
             <form string="API Configuration">
                 <sheet>
                     <group>
-                        <field name="name"/>
-                        <field name="api_key" password="True" placeholder="Paste your v6.exchangerate-api.com token here..."/>
+                        <group string="API Details">
+                            <field name="name"/>
+                            <field name="api_key" password="True" placeholder="Paste your v6.exchangerate-api.com token here..."/>
+                        </group>
+                        <group string="Sync Settings">
+                            <field name="target_country_id" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="target_currency_code" readonly="1" force_save="1"/>
+                        </group>
                     </group>
                 </sheet>
             </form>
@@ -21,6 +27,8 @@
         <field name="arch" type="xml">
             <tree string="API Configurations">
                 <field name="name"/>
+                <field name="target_country_id"/>
+                <field name="target_currency_code"/>
             </tree>
         </field>
     </record>
